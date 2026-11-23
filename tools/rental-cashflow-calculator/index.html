@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Rental Property Cash Flow, NOI, Cap Rate &amp; DSCR Calculator | SheetsThatAddUp by TallySheet</title>
+<meta name="description" content="Calculate real rental property NOI, Cap Rate, Cash-on-Cash Return, and DSCR after vacancy, operating expenses, and mortgage payments.">
+<link rel="canonical" href="https://hwani-net.github.io/tallysheet/tools/rental-cashflow-calculator/">
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Free Rental Property Cash Flow, NOI & Cap Rate Calculator","url":"https://hwani-net.github.io/tallysheet/tools/rental-cashflow-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"Product","name":"Rental Property Cash Flow, NOI & Cap Rate Tracker — 25 Properties (2026-2027)","brand":{"@type":"Brand","name":"SheetsThatAddUp by TallySheet"},"description":"Unlocked 6-tab Rental Property Tracker (.xlsx) for 25 properties, 500 ledger rows, maintenance tickets, and Deal Analyzer.","offers":{"@type":"Offer","price":"19.99","priceCurrency":"USD","availability":"https://schema.org/InStock"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is Net Operating Income (NOI) different from Cash Flow?","acceptedAnswer":{"@type":"Answer","text":"NOI equals Effective Gross Income (rent minus vacancy) minus Operating Expenses (tax, insurance, repairs, management). Cash Flow subtracts annual mortgage debt service from NOI."}},{"@type":"Question","name":"What is a healthy DSCR for a rental property?","acceptedAnswer":{"@type":"Answer","text":"Debt Service Coverage Ratio (NOI divided by Annual Mortgage) above 1.20x–1.25x is commonly targeted by lenders to ensure rent covers debt with a safety buffer."}}]}]}</script>
+
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../../index.html"><span class="dot" style="background:#38bdf8"></span><span>SheetsThatAddUp <span class="brand-by">by TallySheet</span></span></a>
+    <div class="navlinks">
+      <a href="../../index.html">All Tools</a>
+      <a href="../etsy-shopify-profit-calculator/index.html">Seller Profit</a>
+      <a href="../rental-cashflow-calculator/index.html" class="active">Rental NOI</a>
+      <a href="../wedding-budget-calculator/index.html">Wedding Budget</a>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding-bottom:20px">
+    <div class="eyebrow" style="color:#38bdf8">Landlord Deal Analyzer · NOI · Cap Rate · DSCR</div>
+    <h1>Rental Property Cash Flow &amp; Cap Rate Calculator</h1>
+    <p class="sub">Gross rent lies. Model vacancy, operating expenses, and mortgage P&amp;I to see your real take-home cash flow and Cash-on-Cash return.</p>
+  </section>
+
+  <section class="panel" data-calculator-id="rental-property-tracker">
+    <div class="inputs">
+      <div class="field"><label for="purchasePrice">Purchase Price ($)</label><input id="purchasePrice" type="number" step="5000" min="10000" value="320000" data-track-event="calculator_input" data-track-product="rental-property-tracker"></div>
+      <div class="field"><label for="downPct">Down Payment (%)</label><input id="downPct" type="number" step="1" min="0" max="100" value="20" data-track-event="calculator_input" data-track-product="rental-property-tracker"></div>
+      <div class="field"><label for="closingCosts">Closing &amp; Rehab ($)</label><input id="closingCosts" type="number" step="500" min="0" value="12000" data-track-event="calculator_input" data-track-product="rental-property-tracker"></div>
+      <div class="field"><label for="monthlyRent">Monthly Gross Rent ($)</label><input id="monthlyRent" type="number" step="50" min="0" value="2650" data-track-event="calculator_input" data-track-product="rental-property-tracker"></div>
+      <div class="field"><label for="vacancyPct">Vacancy Allowance (%)</label><input id="vacancyPct" type="number" step="1" min="0" max="50" value="5" data-track-event="calculator_input" data-track-product="rental-property-tracker"></div>
+      <div class="field"><label for="opexPct">Operating Expense Ratio (%)</label><input id="opexPct" type="number" step="1" min="0" max="80" value="32" data-track-event="calculator_input" data-track-product="rental-property-tracker"></div>
+      <div class="field"><label for="monthlyMortgage">Monthly Mortgage P&amp;I ($)</label><input id="monthlyMortgage" type="number" step="25" min="0" value="1620" data-track-event="calculator_input" data-track-product="rental-property-tracker"></div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="lbl">Annual NOI</div><div class="val em" id="annualNoi">$0</div><div class="muted" id="capRateHint">Cap Rate: 0.0%</div></div>
+      <div class="kpi"><div class="lbl">Monthly Net Cash Flow</div><div class="val" id="monthlyCashFlow">$0</div><div class="muted" id="cocHint">Cash-on-Cash: 0.0%</div></div>
+      <div class="kpi"><div class="lbl">DSCR Ratio</div><div class="val amber" id="dscrVal">0.00x</div><div class="muted" id="cashInvestedHint">Cash invested: $0</div></div>
+    </div>
+  </section>
+
+  <section class="cta-box" style="border-color:rgba(56,189,248,.45)">
+    <div>
+      <span class="badge">$19.99 · 25 PROPERTIES · EXCEL &amp; GOOGLE SHEETS</span>
+      <h3 style="margin:0 0 6px">Track your real portfolio, 500 ledger rows &amp; maintenance tickets without $25/mo software</h3>
+      <p class="muted" style="margin:0">Download the unlocked 6-tab <strong>Rental Property Cash Flow Tracker</strong> (.xlsx) — verified in real Microsoft Excel.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn" href="https://buy.polar.sh/polar_cl_21GsewjinYLYc1dulvp2vEGxPgzL97qLGBDHi2qqlE1?utm_source=tallysheet_web&amp;utm_medium=calculator&amp;utm_campaign=rental-property-tracker&amp;utm_content=calculator_cta_polar" target="_blank" rel="noopener" data-track-event="checkout_click" data-track-product="rental-property-tracker" data-track-placement="calculator_cta" data-track-channel="polar" >Get Rental Tracker — $19.99</a>
+      <a class="btn sec" href="https://www.etsy.com/listing/4621475332?utm_source=tallysheet_web&amp;utm_medium=calculator&amp;utm_campaign=rental-property-tracker&amp;utm_content=calculator_cta_etsy" target="_blank" rel="noopener" data-track-event="checkout_click" data-track-product="rental-property-tracker" data-track-placement="calculator_cta" data-track-channel="etsy">View on Etsy</a>
+    </div>
+  </section>
+  <div class="notice" id="checkoutNotice"></div>
+
+  <footer>
+    <div class="footer-top">
+      <span>SheetsThatAddUp by TallySheet · Rental Property Cash Flow Suite</span>
+      <a href="../../index.html">Back to SheetsThatAddUp by TallySheet Hub</a>
+    </div>
+    <div class="footer-legal">
+      <p>Trademark Notice: Etsy, Shopify, TikTok, Microsoft Excel, and Google Sheets are registered trademarks of their respective owners. SheetsThatAddUp by TallySheet is an independent creator and is not affiliated with, endorsed by, or sponsored by any of these companies.</p>
+      <p>Disclaimer: Provided for general operational, planning, and informational reference only — not tax advice, legal advice, financial advice, or investment advice. Consult a qualified professional for decisions specific to your situation.</p>
+    </div>
+  </footer>
+</div>
+
+<script type="module">
+const fmt = (n) => (n < 0 ? '-$' : '$') + Math.abs(Math.round(n)).toLocaleString('en-US');
+const ids = ['purchasePrice', 'downPct', 'closingCosts', 'monthlyRent', 'vacancyPct', 'opexPct', 'monthlyMortgage'];
+const els = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
+
+function recalc() {
+  const price = Math.max(0, Number(els.purchasePrice.value) || 0);
+  const down = (Math.max(0, Number(els.downPct.value) || 0) / 100) * price;
+  const closing = Math.max(0, Number(els.closingCosts.value) || 0);
+  const cashInvested = down + closing;
+  const rent = Math.max(0, Number(els.monthlyRent.value) || 0);
+  const vac = Math.min(90, Math.max(0, Number(els.vacancyPct.value) || 0)) / 100;
+  const opexRate = Math.min(95, Math.max(0, Number(els.opexPct.value) || 0)) / 100;
+  const mortgage = Math.max(0, Number(els.monthlyMortgage.value) || 0);
+
+  const egi = rent * 12 * (1 - vac);
+  const noi = egi * (1 - opexRate);
+  const annualDebt = mortgage * 12;
+  const annualCf = noi - annualDebt;
+  const monthlyCf = annualCf / 12;
+  const capRate = price > 0 ? (noi / price) * 100 : 0;
+  const coc = cashInvested > 0 ? (annualCf / cashInvested) * 100 : 0;
+  const dscr = annualDebt > 0 ? noi / annualDebt : 0;
+
+  document.getElementById('annualNoi').textContent = fmt(noi);
+  document.getElementById('capRateHint').textContent = 'Cap Rate: ' + capRate.toFixed(1) + '%';
+  const cfEl = document.getElementById('monthlyCashFlow');
+  cfEl.textContent = fmt(monthlyCf) + '/mo';
+  cfEl.className = 'val ' + (monthlyCf >= 0 ? 'em' : 'red');
+  document.getElementById('cocHint').textContent = 'Cash-on-Cash: ' + coc.toFixed(1) + '%';
+  document.getElementById('dscrVal').textContent = dscr.toFixed(2) + 'x';
+  document.getElementById('cashInvestedHint').textContent = 'Cash invested: ' + fmt(cashInvested);
+}
+
+ids.forEach((id) => els[id].addEventListener('input', recalc));
+recalc();
+</script>
+<script>
+(function () {
+  window.__tallysheetEvents = window.__tallysheetEvents || [];
+  window.tallysheetTrack = function tallysheetTrack(eventName, props) {
+    try {
+      var name = String(eventName || 'interaction');
+      var payload = props && typeof props === 'object' ? Object.assign({}, props) : {};
+      var record = { event: name, props: payload, path: window.location.pathname, ts: new Date().toISOString() };
+      window.__tallysheetEvents.push(record);
+      if (window.__tallysheetEvents.length > 100) {
+        window.__tallysheetEvents.shift();
+      }
+      if (typeof window.plausible === 'function') {
+        window.plausible(name, { props: payload });
+      }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, payload);
+      }
+      return record;
+    } catch (_err) {
+      return null;
+    }
+  };
+
+  document.addEventListener('click', function (e) {
+    var tracked = e.target.closest('[data-track-event]');
+    if (tracked && tracked.tagName !== 'INPUT' && tracked.tagName !== 'SELECT') {
+      window.tallysheetTrack(tracked.getAttribute('data-track-event'), {
+        product: tracked.getAttribute('data-track-product') || '',
+        placement: tracked.getAttribute('data-track-placement') || '',
+        channel: tracked.getAttribute('data-track-channel') || '',
+        href: tracked.getAttribute('href') || '',
+      });
+    }
+
+    var btn = e.target.closest('[data-prelaunch]');
+    if (!btn) return;
+    var id = btn.getAttribute('data-prelaunch');
+    var box = document.getElementById('checkoutNotice-' + id) || document.getElementById('checkoutNotice');
+    if (box) {
+      box.style.display = 'block';
+      box.textContent = 'Checkout link is staged locally (pre-launch). Connect Polar.sh in Spark Center (npm run ops:server) to activate live checkout for ' + id + '.';
+    }
+  });
+
+  document.addEventListener('change', function (e) {
+    var el = e.target.closest('[data-track-event]');
+    if (!el || (el.tagName !== 'INPUT' && el.tagName !== 'SELECT')) return;
+    window.tallysheetTrack(el.getAttribute('data-track-event'), {
+      product: el.getAttribute('data-track-product') || '',
+      field: el.id || el.name || '',
+    });
+  });
+})();
+</script>
+</body>
+</html>

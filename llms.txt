@@ -1,0 +1,23 @@
+# SheetsThatAddUp by TallySheet
+> Verified 2026 E-Commerce Fee Calculators & Unlocked Operational Spreadsheets
+
+## Free Interactive Web Calculators
+- [Multi-Channel Seller Profit & Reverse Price Calculator](https://hwani-net.github.io/tallysheet/tools/etsy-shopify-profit-calculator/): Live margin, Offsite Ads trap, Shopify break-even, and closed-form reverse price calculator.
+- [Rental Property Cash Flow & Cap Rate Calculator](https://hwani-net.github.io/tallysheet/tools/rental-cashflow-calculator/): Real-time NOI, Cap Rate, Cash-on-Cash Return, and DSCR landlord deal simulator.
+- [Wedding Budget & Per-Guest Simulator](https://hwani-net.github.io/tallysheet/tools/wedding-budget-calculator/): 14-category allocation with contingency reserve and seat-based cost per guest.
+
+## Verified Fee Schedule (2026.11, verified 2026-11-19)
+- Etsy (US Payments): listing=$0.20, tx=6.5%, payment=3.0%+$0.25, extra=0.0%, monthly=$0
+- Etsy (KR/Global Payoneer): listing=$0.20, tx=6.5%, payment=4.5%+$0.30, extra=2.0%, monthly=$0
+- Shopify Basic (Shopify Payments): listing=$0.00, tx=0.0%, payment=2.9%+$0.30, extra=0.0%, monthly=$39
+- Shopify Basic + 3rd-Party PG (KR/PayPal): listing=$0.00, tx=0.0%, payment=4.4%+$0.30, extra=2.0%, monthly=$39
+- TikTok Shop (US): listing=$0.00, tx=6.0%, payment=0.0%+$0.00, extra=0.0%, monthly=$0
+
+## Digital Products (.XLSX, Excel & Google Sheets compatible, no macros)
+- 2026 Multi-Channel E-Commerce Fee & Profit Calculator — Etsy, Shopify & TikTok Shop ($14.99): https://hwani-net.github.io/tallysheet/tools/etsy-shopify-profit-calculator/
+- Complete Auto-Calculating Wedding Planner Spreadsheet — 2027 Edition ($8.99): https://hwani-net.github.io/tallysheet/tools/wedding-budget-calculator/
+- Rental Property Cash Flow, NOI & Cap Rate Tracker — 25 Properties (2026-2027) ($19.99): https://hwani-net.github.io/tallysheet/tools/rental-cashflow-calculator/
+
+## Disclosures
+- Trademark Notice: Etsy, Shopify, TikTok, Microsoft Excel, and Google Sheets are registered trademarks of their respective owners. SheetsThatAddUp by TallySheet is an independent creator and is not affiliated with, endorsed by, or sponsored by any of these companies.
+- Disclaimer: Provided for general operational, planning, and informational reference only — not tax advice, legal advice, financial advice, or investment advice. Consult a qualified professional for decisions specific to your situation.

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hwani-net.github.io/tallysheet/sitemap.xml

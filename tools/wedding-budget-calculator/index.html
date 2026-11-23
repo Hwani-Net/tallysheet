@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Wedding Budget &amp; Cost-Per-Guest Calculator (14 Categories) | SheetsThatAddUp by TallySheet</title>
+<meta name="description" content="Split your wedding budget cleanly across all 14 categories, set a safety contingency buffer, and compute true cost per attending guest seat.">
+<link rel="canonical" href="https://hwani-net.github.io/tallysheet/tools/wedding-budget-calculator/">
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Free Wedding Budget & Cost-Per-Guest Simulator","url":"https://hwani-net.github.io/tallysheet/tools/wedding-budget-calculator/","applicationCategory":"LifestyleApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"Product","name":"Complete Auto-Calculating Wedding Planner Spreadsheet — 2027 Edition","brand":{"@type":"Brand","name":"SheetsThatAddUp by TallySheet"},"description":"Unlocked 6-tab Wedding Planner Spreadsheet (.xlsx) for 300 guests, vendor contracts, red overspend alerts, and 28-task timeline.","offers":{"@type":"Offer","price":"8.99","priceCurrency":"USD","availability":"https://schema.org/InStock"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why should a wedding guest list count seats instead of rows?","acceptedAnswer":{"@type":"Answer","text":"A couple or family entered on one row represents 2 to 5 catering plates. Counting Party Size seats gives your caterer and per-guest cost formula the true headcount."}},{"@type":"Question","name":"How much contingency buffer should we keep in a wedding budget?","acceptedAnswer":{"@type":"Answer","text":"Keeping 5% to 10% unallocated protects against guest count increases, overtime vendor fees, and tax/gratuity adjustments."}}]}]}</script>
+
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../../index.html"><span class="dot" style="background:var(--gold)"></span><span>SheetsThatAddUp <span class="brand-by">by TallySheet</span></span></a>
+    <div class="navlinks">
+      <a href="../../index.html">All Tools</a>
+      <a href="../etsy-shopify-profit-calculator/index.html">Seller Profit</a>
+      <a href="../rental-cashflow-calculator/index.html">Rental NOI</a>
+      <a href="../wedding-budget-calculator/index.html" class="active">Wedding Budget</a>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding-bottom:20px">
+    <div class="eyebrow" style="color:var(--gold)">14 Linked Categories · Seat-Based Math</div>
+    <h1>Wedding Budget &amp; Per-Guest Simulator</h1>
+    <p class="sub">Dial in your total budget, attending seats, and safety contingency buffer before signing venue or catering contracts.</p>
+  </section>
+
+  <section class="panel" data-calculator-id="wedding-planner">
+    <div class="inputs">
+      <div class="field"><label for="totalBudget">Total Wedding Budget ($)</label><input id="totalBudget" type="number" step="500" min="1000" value="30000" data-track-event="calculator_input" data-track-product="wedding-planner"></div>
+      <div class="field"><label for="guestCount">Attending Guests (Seats)</label><input id="guestCount" type="number" step="1" min="1" value="120" data-track-event="calculator_input" data-track-product="wedding-planner"></div>
+      <div class="field">
+        <label for="venuePriority">Allocation Style</label>
+        <select id="venuePriority" data-track-event="calculator_input" data-track-product="wedding-planner">
+          <option value="standard" selected>Balanced Classic</option>
+          <option value="venue-heavy">Venue &amp; Dining Focused</option>
+          <option value="intimate">Intimate / Photo Priority</option>
+        </select>
+      </div>
+      <div class="field"><label for="contingencyPct">Contingency Reserve (%)</label><input id="contingencyPct" type="number" step="1" min="0" max="30" value="10" data-track-event="calculator_input" data-track-product="wedding-planner"></div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="lbl">Allocated Budget</div><div class="val" style="color:var(--gold)" id="allocatedSpend">$0</div><div class="muted">Across 14 planner categories</div></div>
+      <div class="kpi"><div class="lbl">Safety Reserve</div><div class="val em" id="contingencyAmount">$0</div><div class="muted">Unallocated buffer</div></div>
+      <div class="kpi"><div class="lbl">Cost Per Guest Seat</div><div class="val" id="costPerGuest">$0</div><div class="muted">Allocated ÷ attending seats</div></div>
+    </div>
+
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Budget Category</th>
+            <th class="num">Share %</th>
+            <th class="num">Suggested Allocation</th>
+          </tr>
+        </thead>
+        <tbody id="categoryTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="cta-box" style="border-color:rgba(212,176,121,.45);background:linear-gradient(135deg,rgba(212,176,121,.12),rgba(15,23,42,.95))">
+    <div>
+      <span class="badge gold">$8.99 · 2027 EDITION · EXCEL &amp; GOOGLE SHEETS</span>
+      <h3 style="margin:0 0 6px">Ready to track actuals, vendor deposits, RSVPs &amp; your 28-task timeline?</h3>
+      <p class="muted" style="margin:0">Get the unlocked 6-tab <strong>Wedding Planner Spreadsheet (2027)</strong> (.xlsx) with automatic red overspend alerts and seat-counting guest math.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn" href="https://buy.polar.sh/polar_cl_oRrOnzkBmR3qsBnAVVxJVAKQQ0UKGJ852mnT92L36FP?utm_source=tallysheet_web&amp;utm_medium=calculator&amp;utm_campaign=wedding-planner&amp;utm_content=calculator_cta_polar" target="_blank" rel="noopener" data-track-event="checkout_click" data-track-product="wedding-planner" data-track-placement="calculator_cta" data-track-channel="polar" >Get Wedding Planner — $8.99</a>
+      <a class="btn sec" href="https://www.etsy.com/listing/4621468287?utm_source=tallysheet_web&amp;utm_medium=calculator&amp;utm_campaign=wedding-planner&amp;utm_content=calculator_cta_etsy" target="_blank" rel="noopener" data-track-event="checkout_click" data-track-product="wedding-planner" data-track-placement="calculator_cta" data-track-channel="etsy">View on Etsy</a>
+    </div>
+  </section>
+  <div class="notice" id="checkoutNotice"></div>
+
+  <footer>
+    <div class="footer-top">
+      <span>SheetsThatAddUp by TallySheet · 2027 Wedding Planner Suite</span>
+      <a href="../../index.html">Back to SheetsThatAddUp by TallySheet Hub</a>
+    </div>
+    <div class="footer-legal">
+      <p>Trademark Notice: Etsy, Shopify, TikTok, Microsoft Excel, and Google Sheets are registered trademarks of their respective owners. SheetsThatAddUp by TallySheet is an independent creator and is not affiliated with, endorsed by, or sponsored by any of these companies.</p>
+      <p>Disclaimer: Provided for general operational, planning, and informational reference only — not tax advice, legal advice, financial advice, or investment advice. Consult a qualified professional for decisions specific to your situation.</p>
+    </div>
+  </footer>
+</div>
+
+<script type="module">
+const WEIGHTS = {
+  standard: {
+    Venue: 24, Catering: 26, Photography: 10, Video: 5, Attire: 7, Beauty: 2,
+    Flowers: 7, Music: 5, Decor: 4, Stationery: 2, Rings: 3, Transport: 2, Gifts: 1, Other: 2,
+  },
+  'venue-heavy': {
+    Venue: 30, Catering: 30, Photography: 9, Video: 4, Attire: 6, Beauty: 2,
+    Flowers: 6, Music: 4, Decor: 3, Stationery: 2, Rings: 2, Transport: 1, Gifts: 0.5, Other: 0.5,
+  },
+  intimate: {
+    Venue: 18, Catering: 24, Photography: 15, Video: 8, Attire: 8, Beauty: 3,
+    Flowers: 8, Music: 4, Decor: 4, Stationery: 2, Rings: 3, Transport: 1, Gifts: 1, Other: 1,
+  },
+};
+
+const fmt = (n) => '$' + Math.round(n).toLocaleString('en-US');
+const ids = ['totalBudget', 'guestCount', 'venuePriority', 'contingencyPct'];
+const els = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
+
+function recalc() {
+  const total = Math.max(0, Number(els.totalBudget.value) || 0);
+  const guests = Math.max(1, Number(els.guestCount.value) || 1);
+  const contPct = Math.min(50, Math.max(0, Number(els.contingencyPct.value) || 0)) / 100;
+  const reserve = total * contPct;
+  const alloc = total - reserve;
+
+  document.getElementById('allocatedSpend').textContent = fmt(alloc);
+  document.getElementById('contingencyAmount').textContent = fmt(reserve);
+  document.getElementById('costPerGuest').textContent = fmt(alloc / guests);
+
+  const weights = WEIGHTS[els.venuePriority.value] || WEIGHTS.standard;
+  const rows = Object.entries(weights).map(([cat, pctVal]) => {
+    const amount = alloc * (pctVal / 100);
+    return '<tr><td><strong>' + cat + '</strong></td><td class="num">' + pctVal.toFixed(1) + '%</td><td class="num">' + fmt(amount) + '</td></tr>';
+  });
+  document.getElementById('categoryTableBody').innerHTML = rows.join('');
+}
+
+ids.forEach((id) => els[id].addEventListener('input', recalc));
+els.venuePriority.addEventListener('change', recalc);
+recalc();
+</script>
+<script>
+(function () {
+  window.__tallysheetEvents = window.__tallysheetEvents || [];
+  window.tallysheetTrack = function tallysheetTrack(eventName, props) {
+    try {
+      var name = String(eventName || 'interaction');
+      var payload = props && typeof props === 'object' ? Object.assign({}, props) : {};
+      var record = { event: name, props: payload, path: window.location.pathname, ts: new Date().toISOString() };
+      window.__tallysheetEvents.push(record);
+      if (window.__tallysheetEvents.length > 100) {
+        window.__tallysheetEvents.shift();
+      }
+      if (typeof window.plausible === 'function') {
+        window.plausible(name, { props: payload });
+      }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, payload);
+      }
+      return record;
+    } catch (_err) {
+      return null;
+    }
+  };
+
+  document.addEventListener('click', function (e) {
+    var tracked = e.target.closest('[data-track-event]');
+    if (tracked && tracked.tagName !== 'INPUT' && tracked.tagName !== 'SELECT') {
+      window.tallysheetTrack(tracked.getAttribute('data-track-event'), {
+        product: tracked.getAttribute('data-track-product') || '',
+        placement: tracked.getAttribute('data-track-placement') || '',
+        channel: tracked.getAttribute('data-track-channel') || '',
+        href: tracked.getAttribute('href') || '',
+      });
+    }
+
+    var btn = e.target.closest('[data-prelaunch]');
+    if (!btn) return;
+    var id = btn.getAttribute('data-prelaunch');
+    var box = document.getElementById('checkoutNotice-' + id) || document.getElementById('checkoutNotice');
+    if (box) {
+      box.style.display = 'block';
+      box.textContent = 'Checkout link is staged locally (pre-launch). Connect Polar.sh in Spark Center (npm run ops:server) to activate live checkout for ' + id + '.';
+    }
+  });
+
+  document.addEventListener('change', function (e) {
+    var el = e.target.closest('[data-track-event]');
+    if (!el || (el.tagName !== 'INPUT' && el.tagName !== 'SELECT')) return;
+    window.tallysheetTrack(el.getAttribute('data-track-event'), {
+      product: el.getAttribute('data-track-product') || '',
+      field: el.id || el.name || '',
+    });
+  });
+})();
+</script>
+</body>
+</html>

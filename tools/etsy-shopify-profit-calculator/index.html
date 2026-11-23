@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free 2026 Etsy, Shopify &amp; TikTok Profit &amp; Reverse Price Calculator | SheetsThatAddUp by TallySheet</title>
+<meta name="description" content="Calculate real net profit after Etsy 6.5% + Offsite Ads (15%/12%), Shopify Basic $39/mo + 2.9% (or +2% 3P fee), and TikTok Shop 6% fees. Instant reverse pricing included.">
+<link rel="canonical" href="https://hwani-net.github.io/tallysheet/tools/etsy-shopify-profit-calculator/">
+<link rel="stylesheet" href="../../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"2026 Multi-Channel E-Commerce Profit & Reverse Price Calculator","url":"https://hwani-net.github.io/tallysheet/tools/etsy-shopify-profit-calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"Product","name":"2026 Multi-Channel E-Commerce Fee & Profit Calculator — Etsy, Shopify & TikTok Shop","brand":{"@type":"Brand","name":"SheetsThatAddUp by TallySheet"},"description":"Unlocked 6-tab Excel & Google Sheets workbook for 200 SKUs, Reverse Pricing, and 5-channel monthly simulation.","offers":{"@type":"Offer","price":"14.99","priceCurrency":"USD","availability":"https://schema.org/InStock"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are Etsy seller fees in 2026?","acceptedAnswer":{"@type":"Answer","text":"Etsy charges a $0.20 listing fee, a 6.5% transaction fee on the total order (item + shipping), and payment processing (3% + $0.25 in the US). International sellers using Payoneer or FX payouts face higher processing/conversion spreads."}},{"@type":"Question","name":"How does Etsy Offsite Ads affect profit margin?","acceptedAnswer":{"@type":"Answer","text":"Etsy Offsite Ads charges 15% (for shops under $10,000/yr) or 12% mandatory (for shops at or above $10,000/yr), capped at $100 per order. Products below 25% gross margin often turn net-negative when Offsite Ads triggers."}},{"@type":"Question","name":"What is Shopify third-party payment gateway fee?","acceptedAnswer":{"@type":"Answer","text":"On Shopify Basic ($39/month), using Shopify Payments costs 2.9% + $0.30. Sellers in countries without Shopify Payments (such as South Korea) pay an extra 2.0% third-party provider fee on top of their gateway fee."}},{"@type":"Question","name":"What does TikTok Shop US charge per order?","acceptedAnswer":{"@type":"Answer","text":"Standard TikTok Shop US referrals use a 6% transaction fee baseline across most categories with $0 monthly subscription fee."}}]}]}</script>
+
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="../../index.html"><span class="dot"></span><span>SheetsThatAddUp <span class="brand-by">by TallySheet</span></span></a>
+    <div class="navlinks">
+      <a href="../../index.html">All Tools</a>
+      <a href="../etsy-shopify-profit-calculator/index.html" class="active">Seller Profit</a>
+      <a href="../rental-cashflow-calculator/index.html">Rental NOI</a>
+      <a href="../wedding-budget-calculator/index.html">Wedding Budget</a>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding-bottom:20px">
+    <div class="eyebrow">Verified Fee Data 2026.11 · Updated 2026-11-19</div>
+    <h1>Etsy, Shopify &amp; TikTok Shop Profit Calculator</h1>
+    <p class="sub">Model one SKU instantly across 5 real fee schedules — including Etsy's 15% Offsite Ads trap ($100 cap) and Shopify's $39/mo break-even volume.</p>
+  </section>
+
+  <section class="panel" data-calculator-id="seller-profit-calculator">
+    <div class="inputs">
+      <div class="field"><label for="salePrice">Sale Price ($)</label><input id="salePrice" type="number" step="0.01" min="0" value="28" data-track-event="calculator_input" data-track-product="seller-profit-calculator"></div>
+      <div class="field"><label for="shippingCharged">Shipping Charged ($)</label><input id="shippingCharged" type="number" step="0.01" min="0" value="0" data-track-event="calculator_input" data-track-product="seller-profit-calculator"></div>
+      <div class="field"><label for="cogs">Item Cost / COGS ($)</label><input id="cogs" type="number" step="0.01" min="0" value="7" data-track-event="calculator_input" data-track-product="seller-profit-calculator"></div>
+      <div class="field"><label for="shippingCost">Shipping Cost ($)</label><input id="shippingCost" type="number" step="0.01" min="0" value="2.5" data-track-event="calculator_input" data-track-product="seller-profit-calculator"></div>
+      <div class="field"><label for="adSpend">Ad Spend / CPA ($)</label><input id="adSpend" type="number" step="0.01" min="0" value="2" data-track-event="calculator_input" data-track-product="seller-profit-calculator"></div>
+      <div class="field">
+        <label for="offsiteAdsMode">Etsy Offsite Ads</label>
+        <select id="offsiteAdsMode" data-track-event="calculator_input" data-track-product="seller-profit-calculator">
+          <option value="none" selected>No (Organic / Direct)</option>
+          <option value="15">Yes — 15% (&lt;$10k/yr)</option>
+          <option value="12">Yes — 12% (&gt;$10k/yr)</option>
+        </select>
+      </div>
+      <div class="field"><label for="targetMargin">Target Net Margin (%)</label><input id="targetMargin" type="number" step="1" min="1" max="90" value="30" data-track-event="calculator_input" data-track-product="seller-profit-calculator"></div>
+      <div class="field"><label for="monthlyOrders">Monthly Orders</label><input id="monthlyOrders" type="number" step="1" min="1" value="60" data-track-event="calculator_input" data-track-product="seller-profit-calculator"></div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="lbl">Best Monthly Channel</div><div class="val em" id="bestMonthlyNet">$0.00</div><div class="muted" id="bestChannelLabel">—</div></div>
+      <div class="kpi"><div class="lbl">Shopify Break-Even vs Etsy US</div><div class="val amber" id="breakEvenOrders">—</div><div class="muted">Orders/mo to beat $39 plan</div></div>
+      <div class="kpi"><div class="lbl">Etsy US Target Price</div><div class="val" id="reversePriceEtsy">$0.00</div><div class="muted" id="reversePriceHint">To hit target margin</div></div>
+    </div>
+
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Channel</th>
+            <th class="num">Unit Fees</th>
+            <th class="num">Unit Net</th>
+            <th class="num">Net Margin</th>
+            <th class="num">Monthly Plan</th>
+            <th class="num">Monthly Net</th>
+            <th class="num">Target Price</th>
+          </tr>
+        </thead>
+        <tbody id="channelTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="cta-box">
+    <div>
+      <span class="badge">$14.99 · 200 SKUs · EXCEL &amp; GOOGLE SHEETS</span>
+      <h3 style="margin:0 0 6px">Need to track 200 SKUs, Reverse Price 50 products &amp; edit fees offline?</h3>
+      <p class="muted" style="margin:0">Download the unlocked 6-tab <strong>Multi-Channel Seller Profit Calculator</strong> (.xlsx) — verified inside real Microsoft Excel with zero #DIV/0! errors.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn" href="https://buy.polar.sh/polar_cl_BbqhqUN54x3VVGJlpa7IWDitKDShuDqa3J8RP2c0Vay?utm_source=tallysheet_web&amp;utm_medium=calculator&amp;utm_campaign=seller-profit-calculator&amp;utm_content=calculator_cta_polar" target="_blank" rel="noopener" data-track-event="checkout_click" data-track-product="seller-profit-calculator" data-track-placement="calculator_cta" data-track-channel="polar" >Download XLSX — $14.99</a>
+      <a class="btn sec" href="https://www.etsy.com/listing/4621467585?utm_source=tallysheet_web&amp;utm_medium=calculator&amp;utm_campaign=seller-profit-calculator&amp;utm_content=calculator_cta_etsy" target="_blank" rel="noopener" data-track-event="checkout_click" data-track-product="seller-profit-calculator" data-track-placement="calculator_cta" data-track-channel="etsy">View on Etsy</a>
+    </div>
+  </section>
+  <div class="notice" id="checkoutNotice"></div>
+
+  <section class="faq">
+    <h2>2026 E-Commerce Fee FAQs</h2>
+    <details open><summary>What fees are included in Etsy US vs. Etsy KR/Global?</summary><p>Etsy US models $0.20 listing + 6.5% transaction + 3.0% + $0.25 payment processing. Global/Korea Payoneer payouts add higher cross-border processing and ~2% FX spread buffer.</p></details>
+    <details><summary>How is the Reverse Sale Price calculated?</summary><p>We solve closed-form pricing algebra: <code>(Hard Costs + Fixed Fees) / (1 - Variable Fee % - Target Margin %)</code>, automatically handling Etsy's $100 Offsite Ads cap when exceeded.</p></details>
+    <details><summary>Why does Shopify Basic + 3rd-Party PG show an extra 2%?</summary><p>In regions without Shopify Payments (including South Korea), Shopify adds a 2% third-party transaction fee on the Basic plan on top of your external gateway fee.</p></details>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <span>SheetsThatAddUp by TallySheet · Powered by fee-engine.mjs (2026.11)</span>
+      <a href="../../index.html">Back to SheetsThatAddUp by TallySheet Hub</a>
+    </div>
+    <div class="footer-legal">
+      <p>Trademark Notice: Etsy, Shopify, TikTok, Microsoft Excel, and Google Sheets are registered trademarks of their respective owners. SheetsThatAddUp by TallySheet is an independent creator and is not affiliated with, endorsed by, or sponsored by any of these companies.</p>
+      <p>Disclaimer: Provided for general operational, planning, and informational reference only — not tax advice, legal advice, financial advice, or investment advice. Consult a qualified professional for decisions specific to your situation.</p>
+    </div>
+  </footer>
+</div>
+
+<script type="module">
+import { compareChannels, calculateReversePrice } from '../../assets/fee-engine.mjs';
+
+const FEES_DATA = {"version":"2026.11","verifiedAt":"2026-11-19","currency":"USD","channels":{"etsy_us":{"id":"etsy_us","label":"Etsy (US Payments)","shortLabel":"Etsy US","listingFee":0.2,"transactionRate":0.065,"paymentRate":0.03,"paymentFixed":0.25,"thirdPartyPenaltyRate":0,"fxBufferRate":0,"offsiteAdsOptionalRate":0.15,"offsiteAdsMandatoryRate":0.12,"offsiteAdsCap":100,"monthlyPlanFee":0,"sourceUrl":"https://help.etsy.com/hc/en-us/articles/360035902374-Beginner-s-Guide-to-Etsy-Fees"},"etsy_kr_payoneer":{"id":"etsy_kr_payoneer","label":"Etsy (KR/Global Payoneer)","shortLabel":"Etsy KR","listingFee":0.2,"transactionRate":0.065,"paymentRate":0.045,"paymentFixed":0.3,"thirdPartyPenaltyRate":0,"fxBufferRate":0.02,"offsiteAdsOptionalRate":0.15,"offsiteAdsMandatoryRate":0.12,"offsiteAdsCap":100,"monthlyPlanFee":0,"sourceUrl":"https://help.etsy.com/hc/en-us/articles/115015628847-What-are-the-Fees-and-Taxes-for-Selling-on-Etsy"},"shopify_basic_us":{"id":"shopify_basic_us","label":"Shopify Basic (Shopify Payments)","shortLabel":"Shopify US","listingFee":0,"transactionRate":0,"paymentRate":0.029,"paymentFixed":0.3,"thirdPartyPenaltyRate":0,"fxBufferRate":0,"offsiteAdsOptionalRate":0,"offsiteAdsMandatoryRate":0,"offsiteAdsCap":0,"monthlyPlanFee":39,"sourceUrl":"https://www.shopify.com/pricing"},"shopify_basic_kr_3p":{"id":"shopify_basic_kr_3p","label":"Shopify Basic + 3rd-Party PG (KR/PayPal)","shortLabel":"Shopify KR 3P","listingFee":0,"transactionRate":0,"paymentRate":0.044,"paymentFixed":0.3,"thirdPartyPenaltyRate":0.02,"fxBufferRate":0,"offsiteAdsOptionalRate":0,"offsiteAdsMandatoryRate":0,"offsiteAdsCap":0,"monthlyPlanFee":39,"sourceUrl":"https://www.shopify.com/kr/pricing"},"tiktok_shop_us":{"id":"tiktok_shop_us","label":"TikTok Shop (US)","shortLabel":"TikTok US","listingFee":0,"transactionRate":0.06,"paymentRate":0,"paymentFixed":0,"thirdPartyPenaltyRate":0,"fxBufferRate":0,"offsiteAdsOptionalRate":0,"offsiteAdsMandatoryRate":0,"offsiteAdsCap":0,"monthlyPlanFee":0,"sourceUrl":"https://seller-us.tiktok.com/university/essay?knowledge_id=10011056"}}};
+const fmt = (n) => (n < 0 ? '-$' + Math.abs(n).toFixed(2) : '$' + n.toFixed(2));
+const pct = (n) => (n * 100).toFixed(1) + '%';
+
+const ids = ['salePrice', 'shippingCharged', 'cogs', 'shippingCost', 'adSpend', 'offsiteAdsMode', 'targetMargin', 'monthlyOrders'];
+const els = Object.fromEntries(ids.map((id) => [id, document.getElementById(id)]));
+
+function recalc() {
+  const input = {
+    salePrice: Number(els.salePrice.value) || 0,
+    shippingCharged: Number(els.shippingCharged.value) || 0,
+    cogs: Number(els.cogs.value) || 0,
+    shippingCost: Number(els.shippingCost.value) || 0,
+    adSpend: Number(els.adSpend.value) || 0,
+    targetMarginRate: (Number(els.targetMargin.value) || 0) / 100,
+  };
+  const offsiteAdsMode = els.offsiteAdsMode.value;
+  const monthlyOrders = Math.max(1, Number(els.monthlyOrders.value) || 1);
+
+  const cmp = compareChannels(input, FEES_DATA, monthlyOrders, { offsiteAdsMode });
+  const best = cmp.channels.find((c) => c.id === cmp.bestChannelId);
+  document.getElementById('bestMonthlyNet').textContent = best ? fmt(best.monthlyNetProfit) : '$0.00';
+  document.getElementById('bestChannelLabel').textContent = best ? best.label : '—';
+
+  const beEl = document.getElementById('breakEvenOrders');
+  beEl.textContent = cmp.breakEvenShopifyVsEtsyOrders
+    ? cmp.breakEvenShopifyVsEtsyOrders + ' orders/mo'
+    : 'N/A';
+
+  const etsyRev = calculateReversePrice(input, FEES_DATA.channels.etsy_us, { offsiteAdsMode });
+  document.getElementById('reversePriceEtsy').textContent = etsyRev.feasible ? fmt(etsyRev.requiredSalePrice) : 'Impossible';
+  document.getElementById('reversePriceHint').textContent = 'For ' + els.targetMargin.value + '% net margin on Etsy US';
+
+  const tbody = document.getElementById('channelTableBody');
+  tbody.innerHTML = cmp.channels.map((c) => {
+    const rev = calculateReversePrice(input, FEES_DATA.channels[c.id], { offsiteAdsMode });
+    const netClass = c.netProfit >= 0 ? 'pos' : 'neg';
+    const moClass = c.monthlyNetProfit >= 0 ? 'pos' : 'neg';
+    return '<tr>' +
+      '<td><strong>' + c.label + '</strong></td>' +
+      '<td class="num">' + fmt(c.totalPlatformFees) + '</td>' +
+      '<td class="num ' + netClass + '">' + fmt(c.netProfit) + '</td>' +
+      '<td class="num ' + netClass + '">' + pct(c.netMargin) + '</td>' +
+      '<td class="num">' + fmt(c.monthlyPlanFee) + '</td>' +
+      '<td class="num ' + moClass + '">' + fmt(c.monthlyNetProfit) + '</td>' +
+      '<td class="num">' + (rev.feasible ? fmt(rev.requiredSalePrice) : 'Impossible') + '</td>' +
+    '</tr>';
+  }).join('');
+}
+
+ids.forEach((id) => els[id].addEventListener('input', recalc));
+els.offsiteAdsMode.addEventListener('change', recalc);
+recalc();
+</script>
+<script>
+(function () {
+  window.__tallysheetEvents = window.__tallysheetEvents || [];
+  window.tallysheetTrack = function tallysheetTrack(eventName, props) {
+    try {
+      var name = String(eventName || 'interaction');
+      var payload = props && typeof props === 'object' ? Object.assign({}, props) : {};
+      var record = { event: name, props: payload, path: window.location.pathname, ts: new Date().toISOString() };
+      window.__tallysheetEvents.push(record);
+      if (window.__tallysheetEvents.length > 100) {
+        window.__tallysheetEvents.shift();
+      }
+      if (typeof window.plausible === 'function') {
+        window.plausible(name, { props: payload });
+      }
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', name, payload);
+      }
+      return record;
+    } catch (_err) {
+      return null;
+    }
+  };
+
+  document.addEventListener('click', function (e) {
+    var tracked = e.target.closest('[data-track-event]');
+    if (tracked && tracked.tagName !== 'INPUT' && tracked.tagName !== 'SELECT') {
+      window.tallysheetTrack(tracked.getAttribute('data-track-event'), {
+        product: tracked.getAttribute('data-track-product') || '',
+        placement: tracked.getAttribute('data-track-placement') || '',
+        channel: tracked.getAttribute('data-track-channel') || '',
+        href: tracked.getAttribute('href') || '',
+      });
+    }
+
+    var btn = e.target.closest('[data-prelaunch]');
+    if (!btn) return;
+    var id = btn.getAttribute('data-prelaunch');
+    var box = document.getElementById('checkoutNotice-' + id) || document.getElementById('checkoutNotice');
+    if (box) {
+      box.style.display = 'block';
+      box.textContent = 'Checkout link is staged locally (pre-launch). Connect Polar.sh in Spark Center (npm run ops:server) to activate live checkout for ' + id + '.';
+    }
+  });
+
+  document.addEventListener('change', function (e) {
+    var el = e.target.closest('[data-track-event]');
+    if (!el || (el.tagName !== 'INPUT' && el.tagName !== 'SELECT')) return;
+    window.tallysheetTrack(el.getAttribute('data-track-event'), {
+      product: el.getAttribute('data-track-product') || '',
+      field: el.id || el.name || '',
+    });
+  });
+})();
+</script>
+</body>
+</html>
